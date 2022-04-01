@@ -18,7 +18,7 @@ The script uses the bs4 package.
 
 2. Clone the repo to your local machine using the following command 
 ```
-git clone https://github.com/<your-github-username>/Dev-Scripts.git
+git clone https://github.com/<your-github-username>/article-scraper.git
 ```
 
 3. Packages to be installed: bs4==4.10.0, requests==2.22.0. Run the following:
