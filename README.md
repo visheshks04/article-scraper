@@ -5,13 +5,6 @@ Scrapes articles for their Title and Body for the given url.
 ## Tech Stack
 Python, BeautifulSoup
 
-## Demonstration
-
-![Demo Recording](Screen.gif)
-
-## Basic Components
-The script uses the bs4 package.
-
 ## Running on local
 
 1. Fork the repo clicking on the fork button in the top right corner
