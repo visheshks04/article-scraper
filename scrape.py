@@ -1,40 +1,20 @@
 from bs4 import BeautifulSoup
+
 import requests
-import sys
+import webbrowser
 
-def scrape_pages(url):
-    '''
-    For scraping article and getting its title and body(p tags content)
-    '''
-    try:
-        res = requests.get(url)
+# For scraping article and getting its title and body(p tags content)
 
-        if res.status_code == 200:
-            soup = BeautifulSoup(res.content, 'html.parser')
+google = "https://www.google.com/search?q="
+url = input("please enter what you want to scrap: ")
+url = google+url.replace(" ","+")
+url
 
-            title = soup.title.text
+res = requests.get(url)
 
-            p_content = soup.findAll('p')
-            p_content = " ".join([p.text for p in p_content])
+html_cont = res.content
 
-    except:
-        print("Some exception occured.")
+data = BeautifulSoup(html_cont,'html.parser')
 
-    return title, p_content
-
-
-if __name__ == '__main__':
-
-    for i,url in enumerate(sys.argv[1:]):
-        title, body = scrape_pages(url)
-        with open(f'{i}.txt', 'w') as f:
-            f.write(title+'\n\n')
-            f.write(body)
-        print(title)
-        print(body)
-
-
-
-
-#***********************  Made By: Vishesh  ************************ #
-#*************** https://github.com/visheshks04 *********************#
+for i in data.find_all('h3',{'class':"zBAuLc l97dzf"}):
+    print(i.text)
