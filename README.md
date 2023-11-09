@@ -14,10 +14,10 @@ Python, BeautifulSoup
 git clone https://github.com/<your-github-username>/article-scraper.git
 ```
 
-3. Packages to be installed: bs4==4.10.0, requests==2.22.0. Run the following:
+3. Packages to be installed: bs4==4.10.0, requests==2.22.0 validators==0.22.0. Run the following:
 
 ```
-pip install bs4==4.10.0 requests==2.22.0 validators==0.22.0
+pip install bs4==0.0.1 requests==2.22.0 validators==0.22.0
 ```
 
 4. Just run the scrape.py with url as the command line argument. There can be any number of urls.
