@@ -27,8 +27,9 @@ if __name__ == '__main__':
 
     for i,url in enumerate(sys.argv[1:]):
         title, body = scrape_pages(url)
-        with open(f'{i}.txt', 'w') as f:
+        with open(f'{i}.txt', 'w', encoding='utf-8') as f:
             f.write(title+'\n\n')
+            print(body)
             f.write(body)
         print(title)
         print(body)
